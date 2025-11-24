@@ -1,0 +1,2 @@
+aby odpalic testy należy te 2 plki skopiowac do 1 folderu ,,wind" po czym zamienić je z folderem wind juz w kodzie aplikacji ścieżka do folderu:  itm_ol_workspace-goldenweb-magazyny-53c2527ad66d\frontend\src\assets\presets\wind 
+zeby odpalic testy nalezy pobrac wtyczke do visual studio code ViTest kliknac w nowa ikonke fiolki na pasku po lewej stronie przejsc do tego folderu itm_ol_workspace-goldenweb-magazyny-53c2527ad66d\frontend\src\assets\presets\wind i kliknac kolo folderu run i testy powinny się odpalic
