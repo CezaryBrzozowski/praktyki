@@ -1,70 +1,83 @@
+import { describe, it, expect } from 'vitest';
 import tooltipPreset from './index';
+
+function flattenClasses(input) {
+  return input.flatMap(item => {
+    if (typeof item === 'string') return item;
+    if (item && typeof item === 'object') {
+      return Object.entries(item)
+        .filter(([, val]) => Boolean(val))
+        .map(([key]) => key);
+    }
+    return [];
+  });
+}
 
 describe('tooltipPreset', () => {
   it('should return correct classes for root with right position', () => {
-    expect(
+    const classes = flattenClasses(
       tooltipPreset.root({
         context: { right: true },
         props: {}
       }).class
-    ).toEqual(
-      expect.arrayContaining(['absolute', 'px-1.5'])
     );
+
+    expect(classes).toEqual(expect.arrayContaining(['absolute', 'px-1.5']));
   });
 
   it('should return correct classes for root with left position', () => {
-    expect(
+    const classes = flattenClasses(
       tooltipPreset.root({
         context: { left: true },
         props: {}
       }).class
-    ).toEqual(
-      expect.arrayContaining(['absolute', 'px-1.5'])
     );
+
+    expect(classes).toEqual(expect.arrayContaining(['absolute', 'px-1.5']));
   });
 
   it('should return correct classes for root with top position', () => {
-    expect(
+    const classes = flattenClasses(
       tooltipPreset.root({
         context: { top: true },
         props: {}
       }).class
-    ).toEqual(
-      expect.arrayContaining(['absolute', 'py-1.5'])
     );
+
+    expect(classes).toEqual(expect.arrayContaining(['absolute', 'py-1.5']));
   });
 
   it('should return correct classes for root with bottom position', () => {
-    expect(
+    const classes = flattenClasses(
       tooltipPreset.root({
         context: { bottom: true },
         props: {}
       }).class
-    ).toEqual(
-      expect.arrayContaining(['absolute', 'py-1.5'])
     );
+
+    expect(classes).toEqual(expect.arrayContaining(['absolute', 'py-1.5']));
   });
 
   it('should return correct classes for root with no position specified', () => {
-    expect(
+    const classes = flattenClasses(
       tooltipPreset.root({
         context: {},
         props: {}
       }).class
-    ).toEqual(
-      expect.arrayContaining(['absolute', 'px-1.5'])
     );
+
+    expect(classes).toEqual(expect.arrayContaining(['absolute', 'px-1.5']));
   });
 
   it('should return correct classes for root with top and left positions', () => {
-    expect(
+    const classes = flattenClasses(
       tooltipPreset.root({
         context: { top: true, left: true },
         props: {}
       }).class
-    ).toEqual(
-      expect.arrayContaining(['absolute', 'px-1.5', 'py-1.5'])
     );
+
+    expect(classes).toEqual(expect.arrayContaining(['absolute', 'px-1.5', 'py-1.5']));
   });
 
   it('should return correct classes for arrow', () => {

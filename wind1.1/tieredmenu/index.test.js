@@ -1,4 +1,5 @@
-import tieredmenuPreset from './index';
+import { describe, it, expect } from 'vitest';
+import tieredmenuPreset from './index.js';
 
 describe('tieredmenuPreset', () => {
   it('should return correct classes for root', () => {
